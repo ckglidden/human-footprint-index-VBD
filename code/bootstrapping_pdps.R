@@ -1,6 +1,9 @@
-##this code uses different subsets of 80% of the data to get CI around pdps
-##it also uses different test vs. train splits to get a CI around model performance
-##updated to include spatial-cv
+##Partial dependence plots for: Human footprint is associated with shifts in assemblages of major vector-borne diseases
+##Author: Caroline Glidden & Eloise Skinner
+##Date: Dec 6, 2022
+
+##this code creates partial dependence plots for each covariate in the models & calculates HFI inflection points (where probability of occurrence shifts from increasing to decreasing, or vice versa)
+##bootstrapping is used to estimate uncertainty and confidence intervals for the pdps and inflection points
 
 ###load packages
 library("randomForestSRC"); library("caTools")
