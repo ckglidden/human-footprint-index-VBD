@@ -61,9 +61,9 @@ data$malaria <- as.factor(ifelse(data$malaria_incidence > 0, 1, 0))
 data$cutaneous_leish <- as.factor(ifelse(data$c_leish_incidence > 0, 1, 0))
 data$visceral_leish <- as.factor(ifelse(data$v_leish_incidence > 0, 1, 0))
 
-##-------------------------------------------------------------##
-##for loop for running flavi virus models through spatial_cv   ##       
-##-------------------------------------------------------------##
+##----------------------------------------------------------------------##
+##for loop for running flavi virus models through spatial-temporal cv   ##       
+##----------------------------------------------------------------------##
 
 oob_out_flavi <- data.frame(matrix(vector(), 0, 7,
                               dimnames=list(c(), c("auc", "sens", "spec", "oob", "Type", "spatial_fold", "temporal_fold"))), 
