@@ -1,5 +1,5 @@
 # human-footprint-index-VBD
-> Code for: *Human footprint is associated with shifts in assemblages of major vector-borne diseases.* 2022. Skinner EB, Glidden CK, MacDonald AJ, Mordecai EA. Nature: accepted.
+> Code for: *Human footprint is associated with shifts in assemblages of major vector-borne diseases.* 2022. Skinner EB, Glidden CK, MacDonald AJ, Mordecai EA. *Nature Sustainability*: accepted.
 > Code by Caroline K. Glidden & Eloise B. Skinner
 
 This github contains the following R files:
