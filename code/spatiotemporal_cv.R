@@ -38,15 +38,9 @@ splits_df$CD_MUN = substr(splits_df$CD_MUN,1,nchar(splits_df$CD_MUN)-1)
 #final data
 data <- merge(data, splits_df, by = "CD_MUN")
 
-
 #include temporal expanding window
-data$year_fold_test <- ifelse(data$year == 2017, 1,
-                              ifelse(data$year == 2018, 2,
-                                     ifelse(data$year == 2019, 3)))
+test_year <- c(2017, 2018, 2019)
 
-data$year_fold_train <- ifelse(data$year < 2017, 1,
-                               ifelse(data$year < 2018, 2,
-                                      ifelse(data$year < 2019, 3)))
 
 #log transform variables
 data$pop_log <- log(data$population)
@@ -91,8 +85,8 @@ for(k in 1:3){
   for(j in 1:3){
 
     #subset temporal folds here
-    temporal_train <- subset(data, year_fold_train == j)
-    temporal_test <- subset(data, year_fold_test == j)
+    temporal_train <- subset(data, year == test_year[j])
+    temporal_test <- subset(data, year < test_year[j])
 
     oob_out_cv <- data.frame(matrix(vector(),0, 7,
                                        dimnames=list(c(), c("auc", "sens", "spec", "oob", "Type", "spatial_fold", "temporal_fold"))),
