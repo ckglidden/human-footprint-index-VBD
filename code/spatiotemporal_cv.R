@@ -224,8 +224,8 @@ ml_formula = malaria~human_footprint+cropland_log+forest+pasture+pop_log+annual_
 
 for(j in 1:3){
   
-  temporal_train <- subset(data, year_fold_train == j)
-  temporal_test <- subset(data, year_fold_test == j)
+  temporal_train <- subset(data, year == test_year[j])
+  temporal_test <- subset(data, year < test_year[j])
   
   oob_out_cv <- data.frame(matrix(vector(),0, 7,
                                   dimnames=list(c(), c("auc", "sens", "spec", "oob", "Type", "spatial_fold", "temporal_fold"))), 
@@ -350,8 +350,8 @@ cl_formula = cutaneous_leish~human_footprint+cropland_log+forest+pasture+pop_log
 
 for(j in 1:3){
   
-  temporal_train <- subset(data, year_fold_train == j)
-  temporal_test <- subset(data, year_fold_test == j)
+  temporal_train <- subset(data, year == test_year[j])
+  temporal_test <- subset(data, year < test_year[j])
   
   oob_out_cv <- data.frame(matrix(vector(),0, 7,
                                   dimnames=list(c(), c("auc", "sens", "spec", "oob", "Type", "spatial_fold", "temporal_fold"))), 
@@ -478,8 +478,8 @@ vl_formula = visceral_leish~human_footprint+cropland_log+forest+pasture+pop_log+
 
 for(j in 1:3){
   
-  temporal_train <- subset(data, year_fold_train == j)
-  temporal_test <- subset(data, year_fold_test == j)
+  temporal_train <- subset(data, year == test_year[j])
+  temporal_test <- subset(data, year < test_year[j])
   
   oob_out_cv <- data.frame(matrix(vector(),0, 7,
                                   dimnames=list(c(), c("auc", "sens", "spec", "oob", "Type", "spatial_fold", "temporal_fold"))), 
