@@ -20,7 +20,7 @@ data <- read.csv("../data/full_dataset.csv")
 mun <- read_sf("../data/br_municipios_20200807")
 
 #identify 15 spatial folds using k-means clustering
-spatial_split <- spatial_clustering_cv(mun, v = 10)
+spatial_split <- spatial_clustering_cv(mun, v = 15)
 
 splits_df <- c()
 for(i in 1:15){
